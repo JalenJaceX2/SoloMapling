@@ -166,6 +166,9 @@ public final class BotFlavor {
     }
 
     private static BotAttackProfile pickProfile(BotAttackConfig.JobAttacks atk) {
+        if (atk == null) {
+            return null;
+        }
         List<BotAttackProfile> options = new ArrayList<>();
         if (atk.single() != null) {
             options.add(atk.single());
